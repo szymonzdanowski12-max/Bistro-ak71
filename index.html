@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Bistro AK-71 | Luboń</title>
+<meta name="description" content="Bistro AK-71 – kuchnia domowa, catering i imprezy okolicznościowe. ul. Sobieskiego 78, 62-030 Luboń."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f7f2e8;--card:#fffdf9;--text:#23201b;--muted:#6e665c;
+  --gold:#b7933f;--gd:#8f702a;--dark:#171411;--line:#e6dac0;
+  --shadow:0 18px 45px rgba(0,0,0,.10);--r:22px;--nh:82px
+}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;color:var(--text);background:var(--bg);line-height:1.65}
+img{max-width:100%;display:block} a{color:inherit}
+.wrap{width:min(1180px,calc(100% - 32px));margin:0 auto}
+
+/* NAV */
+.topbar{position:sticky;top:0;z-index:1000;backdrop-filter:blur(16px);background:rgba(23,20,17,.93);border-bottom:1px solid rgba(255,255,255,.07);min-height:var(--nh)}
+.nav{min-height:var(--nh);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:#fff}
+.brand img{width:60px;height:42px;object-fit:contain;background:#fff;border-radius:10px;padding:4px;box-shadow:0 4px 14px rgba(0,0,0,.2);flex-shrink:0}
+.brand-title{font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:.04em;line-height:1}
+.brand-sub{font-size:.75rem;color:#d6c39a;letter-spacing:.2em;text-transform:uppercase;margin-top:4px}
+.nav-links{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.nav-links a{color:#f3eee5;text-decoration:none;font-size:.88rem;font-weight:500;letter-spacing:.02em}
+.nav-links a:hover{color:#f0d48b}
+
+/* HERO */
+.hero{position:relative;min-height:calc(100vh - var(--nh));display:grid;align-items:center;overflow:hidden;background:#1a1410}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(14,11,9,.82) 0%,rgba(14,11,9,.54) 45%,rgba(14,11,9,.28) 100%),linear-gradient(0deg,rgba(0,0,0,.38) 0%,transparent 60%);z-index:1}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero-in{position:relative;z-index:2;padding:80px 0 90px;color:#fff}
+.pill{display:inline-block;margin-bottom:20px;padding:8px 16px;border:1px solid rgba(255,255,255,.22);border-radius:999px;color:#f0d48b;background:rgba(255,255,255,.07);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6.5vw,5.6rem);line-height:.98;letter-spacing:.02em;max-width:780px;text-shadow:0 4px 28px rgba(0,0,0,.3)}
+.hero-sub{max-width:600px;margin-top:20px;font-size:1.06rem;color:rgba(255,255,255,.88);text-shadow:0 2px 14px rgba(0,0,0,.22)}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.92rem;border:1px solid transparent;transition:.2s}
+.btn-g{background:var(--gold);color:#1f180f} .btn-g:hover{background:#d4af57;transform:translateY(-1px)}
+.btn-o{background:rgba(255,255,255,.09);color:#fff;border-color:rgba(255,255,255,.26)} .btn-o:hover{background:rgba(255,255,255,.16)}
+
+/* SECTIONS */
+section{padding:76px 0;scroll-margin-top:90px}
+.s-kicker{color:var(--gd);font-size:.8rem;text-transform:uppercase;letter-spacing:.18em}
+.s-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.8vw,2.9rem);margin-top:8px}
+.s-note{color:var(--muted);margin-top:10px;max-width:720px}
+.s-top{margin-bottom:28px}
+
+/* DANIE DNIA */
+.highlight{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.dc{padding:30px}
+.badge{display:inline-block;padding:7px 12px;border-radius:999px;background:#f7ead1;color:var(--gd);font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.dn{font-family:'Playfair Display',serif;font-size:1.9rem;margin-top:14px}
+.dp{font-size:1.8rem;font-weight:800;color:var(--gd);margin-top:14px}
+.dc p{margin-top:12px;color:var(--muted)}
+.sp{overflow:hidden;min-height:320px} .sp img{width:100%;height:100%;object-fit:cover}
+
+/* MENU */
+#menu{background:#fff}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tb{border:1px solid var(--line);background:#fff;color:var(--text);padding:9px 15px;border-radius:999px;cursor:pointer;font-weight:600;font-size:.85rem;font-family:Inter,sans-serif}
+.tb.on{background:var(--gold);color:#1f180f;border-color:var(--gold)}
+.tc{display:none} .tc.on{display:block}
+.mg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 24px}
+.mi{background:rgba(255,255,255,.85);border:1px solid var(--line);border-radius:18px;padding:16px}
+.mh{display:flex;justify-content:space-between;gap:14px;align-items:start}
+.mn{font-family:'Playfair Display',serif;font-size:1.15rem;line-height:1.2}
+.mp{color:var(--gd);font-weight:800;white-space:nowrap}
+.md{margin-top:7px;color:var(--muted);font-size:.9rem}
+
+/* O NAS */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+.ac{padding:30px}
+.feats{margin-top:20px;display:grid;gap:10px}
+.feat{display:flex;gap:10px;color:var(--muted)} .feat strong{color:var(--text)}
+.ap{overflow:hidden;min-height:420px} .ap img{width:100%;height:100%;object-fit:cover}
+
+/* KONTAKT */
+#kontakt{background:var(--dark);color:#ddd3c4}
+#kontakt .s-title{color:#fff} #kontakt .s-kicker{color:var(--gold)}
+.cg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cc{padding:26px}
+.cc h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.1)}
+.hl,.cl{list-style:none;display:grid;gap:9px}
+.hl li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed rgba(255,255,255,.1);padding-bottom:8px;font-size:.93rem}
+.hl li span:first-child{color:#aaa} .hl li span:last-child{color:#f0d48b;font-weight:700}
+.cl li{display:flex;gap:10px;color:#cbbda6;font-size:.93rem}
+.cl a{color:var(--gold)} .cl a:hover{text-decoration:underline}
+.mf{width:100%;height:270px;border:0;border-radius:16px;filter:grayscale(20%)}
+
+
+
+/* FOOTER */
+footer{background:#0f0d0b;color:#cbbda6;padding:38px 0 50px}
+.fg{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:start}
+.fb{display:flex;gap:14px;align-items:center}
+.fb img{width:82px;background:#fff;border-radius:12px;padding:6px}
+.ft{font-family:'Playfair Display',serif;font-size:1.6rem;color:#fff}
+.fm{color:#a99980;font-size:.9rem;margin-top:6px}
+footer ul{list-style:none;display:grid;gap:8px}
+footer h4{color:#fff;margin-bottom:10px;font-size:1rem}
+.copy{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);color:#7a6e62;font-size:.82rem;line-height:1.8}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+  .highlight,.about,.cg,.fg,.mg,.frow{grid-template-columns:1fr}
+  .nav{flex-direction:column;align-items:flex-start} .nav-links{justify-content:flex-start}
+  :root{--nh:118px}
+}
+@media(max-width:600px){
+  .brand img{width:52px;height:38px} .brand-title{font-size:1.2rem}
+  .nav-links{gap:10px} .hero-in{padding:60px 0 70px}
+  section{padding:60px 0} .dc,.ac,.cc{padding:20px}
+}
+
+/* STATS */
+.stats{background:var(--dark);padding:48px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.stat{text-align:center;padding:32px 20px;border-right:1px solid rgba(255,255,255,.08)}
+.stat:last-child{border-right:none}
+.stat-num{font-family:'Playfair Display',serif;font-size:3.2rem;color:var(--gold);line-height:1;font-weight:700}
+.stat-label{margin-top:10px;color:#cbbda6;font-size:.95rem;letter-spacing:.04em}
+@media(max-width:600px){.stats-grid{grid-template-columns:1fr}.stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}.stat:last-child{border-bottom:none}}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#start">
+      <img src="logo.jpg" alt="Logo Bistro AK-71">
+      <div>
+        <div class="brand-title">Bistro AK-71</div>
+        <div class="brand-sub">Luboń</div>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#danie-dnia">Danie dnia</a>
+      <a href="#o-nas">O nas</a>
+      <a href="#kontakt">Kontakt</a>
+      
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="start">
+  <img class="hero-bg" src="hero.jpg" alt="Sala bankietowa Bistro AK-71 przygotowana na imprezę okolicznościową">
+  <div class="wrap hero-in">
+    <span class="pill">Kuchnia domowa &bull; Luboń</span>
+    <h1>Bistro<br>AK&#8209;71</h1>
+    <p class="hero-sub">Smaczna kuchnia domowa w przytulnej sali. Lunche, dania dnia, catering i imprezy okolicznościowe w Luboniu.</p>
+    <div class="acts">
+      <a class="btn btn-g" href="#menu">Zobacz menu</a>
+      <a class="btn btn-o" href="tel:+48602262091">602 262 091</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- STATS -->
+<div class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat">
+      <div class="stat-num">5+</div>
+      <div class="stat-label">Lat smacznego gotowania</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">1000+</div>
+      <div class="stat-label">Zadowolonych gości</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3000+</div>
+      <div class="stat-label">Pysznych obiadów wydanych z kuchni</div>
+    </div>
+  </div>
+</div>
+
+<!-- DANIE DNIA -->
+<section id="danie-dnia">
+  <div class="wrap">
+    <div class="s-top">
+      <div class="s-kicker">Dziś polecamy</div>
+      <h2 class="s-title">Danie dnia</h2>
+      <p class="s-note">Propozycje lunchowe zmieniają się codziennie. Zadzwoń lub sprawdź Facebook, by dowiedzieć się, co dziś gotujemy.</p>
+    </div>
+    <div class="highlight">
+      <div class="panel dc">
+        <span class="badge">Każdy dzień co&scaron; nowego</span>
+        <div class="dn">Specjalne danie dnia</div>
+        <p>Każdego dnia nasz kucharz tworzy wyjątkowe danie, kt&oacute;re trafia do menu tylko na jeden dzień. To nasza codzienność — świeże składniki, niepowtarzalny smak i odrobina kulinarnej niespodzianki.</p>
+        <p style="margin-top:10px">Sprawdź co dziś przygotowaliśmy — zadzwoń lub zajrzyj na nasz Facebook!</p>
+        <div class="acts" style="margin-top:20px">
+          <a class="btn btn-g" href="https://www.facebook.com/profile.php?id=100057388662089" target="_blank" rel="noopener">Facebook</a>
+          <a class="btn btn-o" href="tel:+48602262091" style="background:rgba(23,20,17,.06);color:var(--text);border-color:var(--line)">Zadzwoń</a>
+        </div>
+      </div>
+      <div class="panel sp">
+        <img src="wnetrze.jpg" alt="Wnętrze Bistro AK-71">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="wrap">
+    <div class="s-top">
+      <div class="s-kicker">Pełna karta</div>
+      <h2 class="s-title">Menu</h2>
+      <p class="s-note">Ceny zawierają VAT. W przypadku alergii pokarmowej prosimy o poinformowanie obsługi.</p>
+    </div>
+    <div class="tabs">
+      <button class="tb on" onclick="tab('z1',this)">Zupy</button>
+      <button class="tb" onclick="tab('z2',this)">Dania główne</button>
+      <button class="tb" onclick="tab('z3',this)">Makarony</button>
+      <button class="tb" onclick="tab('z4',this)">Ryby</button>
+      <button class="tb" onclick="tab('z5',this)">Dziecięce</button>
+      <button class="tb" onclick="tab('z6',this)">Desery</button>
+      <button class="tb" onclick="tab('z7',this)">Dodatki</button>
+      <button class="tb" onclick="tab('z8',this)">Napoje zimne</button>
+      <button class="tb" onclick="tab('z9',this)">Napoje ciepłe</button>
+    </div>
+
+    <div id="z1" class="tc on"><div class="mg">
+      <div class="mi"><div class="mh"><div class="mn">Krem pomidorowy z mozzarellą</div><div class="mp">14,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Żurek staropolski z jajkiem</div><div class="mp">17,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Zupa gulaszowa</div><div class="mp">19,00 zł</div></div></div>
+    </div></div>
+
+    <div id="z2" class="tc"><div class="mg">
+      <div class="mi"><div class="mh"><div class="mn">Burger AK-71</div><div class="mp">30,00 zł</div></div><div class="md">Wołowina 220 g, dżem z czerwonej cebuli, sos kaparowo-ogórkowy, bekon, pomidor, ogórek</div></div>
+      <div class="mi"><div class="mh"><div class="mn">Burger AK-71 zestaw</div><div class="mp">35,00 zł</div></div><div class="md">Wołowina 220 g, jak wyżej + frytki i surówka</div></div>
+      <div class="mi"><div class="mh"><div class="mn">Zraz wołowy</div><div class="mp">47,00 zł</div></div><div class="md">Rostbef 170 g, pyzy, buraczki</div></div>
+      <div class="mi"><div class="mh"><div class="mn">Zraz wieprzowy</div><div class="mp">37,00 zł</div></div><div class="md">Schab 160 g, ziemniaki, kapusta modra</div></div>
+      <div class="mi"><div class="mh"><div class="mn">Pieczeń wieprzowa</div><div class="mp">34,00 zł</div></div><div class="md">Wieprzowina 140 g, ziemniaki, kapusta zasmażana</div></div>
+      <div class="mi"><div class="mh"><div class="mn">Kotlet schabowy</div><div class="mp">35,00 zł</div></div><div class="md">Schab 180 g, ziemniaki, kapusta biała zasmażana, ogórek kiszony</div></div>
+      <div class="mi"><div class="mh"><div class="mn">Sznycel wieprzowy z jajkiem sadzonym</div><div class="mp">36,00 zł</div></div><div class="md">Schab 160 g, ziemniaki, mizeria</div></div>
+      <div class="mi"><div class="mh"><div class="mn">Polędwica wieprzowa w sosie grzybowym</div><div class="mp">39,00 zł</div></div><div class="md">Polędwica 170 g, ziemniaki, surówka</div></div>
+      <div class="mi"><div class="mh"><div class="mn">Polędwica na maśle z rozmarynem</div><div class="mp">35,00 zł</div></div><div class="md">Polędwica 170 g, ziemniaki, surówka</div></div>
+      <div class="mi"><div class="mh"><div class="mn">MIX mięs z grilla</div><div class="mp">55,00 zł</div></div><div class="md">Polędwica 100 g, schab 100 g, filet z kurczaka 100 g, wedges, surówka</div></div>
+      <div class="mi"><div class="mh"><div class="mn">Kotlet de volaille</div><div class="mp">32,00 zł</div></div><div class="md">Filet z kurczaka 150 g, frytki, surówka</div></div>
+      <div class="mi"><div class="mh"><div class="mn">Grillowany filet z kurczaka</div><div class="mp">—</div></div><div class="md">Filet z kurczaka 180 g, wedges ziemniaczany, surówka</div></div>
+      <div class="mi"><div class="mh"><div class="mn">Filet z kurczaka w sosie grzybowym</div><div class="mp">37,00 zł</div></div><div class="md">Filet z kurczaka 150 g, ziemniaki, surówka</div></div>
+      <div class="mi"><div class="mh"><div class="mn">Udko z kaczki</div><div class="mp">42,00 zł</div></div><div class="md">Udko z kaczki, pyzy, kapusta modra</div></div>
+    </div></div>
+
+    <div id="z3" class="tc"><div class="mg">
+      <div class="mi"><div class="mh"><div class="mn">Tagliatelle z kurczakiem w sosie śmietanowym</div><div class="mp">35,00 zł</div></div><div class="md">Kurczak, czosnek, cebula, pepperoni, cukinia, pieczarki</div></div>
+      <div class="mi"><div class="mh"><div class="mn">Czarne tagliatelle z krewetkami</div><div class="mp">49,00 zł</div></div><div class="md">Krewetki, oliwa, czosnek, pepperoni, suszone pomidory, cukinia</div></div>
+    </div></div>
+
+    <div id="z4" class="tc"><div class="mg">
+      <div class="mi"><div class="mh"><div class="mn">Sandacz sauté lub panierowany</div><div class="mp">46,00 zł</div></div><div class="md">Sandacz 150 g, dodatki do wyboru</div></div>
+      <div class="mi"><div class="mh"><div class="mn">Morszczuk sauté lub panierowany</div><div class="mp">36,00 zł</div></div><div class="md">Morszczuk 180 g, dodatki do wyboru</div></div>
+    </div></div>
+
+    <div id="z5" class="tc"><div class="mg">
+      <div class="mi"><div class="mh"><div class="mn">Nuggetsy</div><div class="mp">24,00 zł</div></div><div class="md">Filet z kurczaka 100 g, frytki, surówka</div></div>
+      <div class="mi"><div class="mh"><div class="mn">Makaron z sosem pomidorowym</div><div class="mp">17,00 zł</div></div><div class="md">Makaron z sosem 150 g</div></div>
+    </div></div>
+
+    <div id="z6" class="tc"><div class="mg">
+      <div class="mi"><div class="mh"><div class="mn">Frutti di bosco</div><div class="mp">18,00 zł</div></div><div class="md">Lody waniliowe z sosem owocowym</div></div>
+      <div class="mi"><div class="mh"><div class="mn">Lody waniliowe</div><div class="mp">14,00 zł</div></div></div>
+    </div></div>
+
+    <div id="z7" class="tc"><div class="mg">
+      <div class="mi"><div class="mh"><div class="mn">Frytki 150 g</div><div class="mp">9,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Ziemniaki 200 g</div><div class="mp">4,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Pyza 1 szt.</div><div class="mp">2,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Surówka 120 g</div><div class="mp">5,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Kapusta zasmażana 150 g</div><div class="mp">7,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Kapusta modra 150 g</div><div class="mp">7,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Sos pieczeniowy</div><div class="mp">4,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Sos czosnkowy</div><div class="mp">4,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Sos burgerowy</div><div class="mp">5,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Ketchup</div><div class="mp">2,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Majonez</div><div class="mp">2,00 zł</div></div></div>
+    </div></div>
+
+    <div id="z8" class="tc"><div class="mg">
+      <div class="mi"><div class="mh"><div class="mn">Lemoniada duża 450 ml</div><div class="mp">10,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Lemoniada mała 300 ml</div><div class="mp">7,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Woda gazowana 0,3 l</div><div class="mp">6,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Woda niegazowana 0,3 l</div><div class="mp">6,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Woda gazowana 0,5 l</div><div class="mp">7,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Woda niegazowana 0,5 l</div><div class="mp">7,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Pepsi 0,2 l</div><div class="mp">8,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Pepsi Max 0,2 l</div><div class="mp">8,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Pepsi 0,5 l</div><div class="mp">10,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Mirinda 0,2 l</div><div class="mp">8,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Tonic 0,2 l</div><div class="mp">8,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">7 Up 0,2 l</div><div class="mp">8,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Sok jabłkowy 0,2 l</div><div class="mp">8,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Sok pomarańczowy 0,2 l</div><div class="mp">8,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Lipton brzoskwiniowy 0,5 l</div><div class="mp">10,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Lipton cytrynowy 0,5 l</div><div class="mp">10,00 zł</div></div></div>
+    </div></div>
+
+    <div id="z9" class="tc"><div class="mg">
+      <div class="mi"><div class="mh"><div class="mn">Kawa po turecku</div><div class="mp">6,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Kawa espresso</div><div class="mp">9,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Kawa cappuccino</div><div class="mp">9,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Kawa latte</div><div class="mp">9,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Herbata czarna Ronnefeldt</div><div class="mp">9,00 zł</div></div></div>
+      <div class="mi"><div class="mh"><div class="mn">Herbaty owocowe Ronnefeldt</div><div class="mp">9,00 zł</div></div></div>
+    </div></div>
+
+    <p class="s-note" style="margin-top:20px">&#9432; W kuchni używane są produkty zawierające alergeny (gluten, jaja, mleko, ryby, skorupiaki, seler, gorczyca, orzechy). Prosimy o poinformowanie obsługi w przypadku alergii.</p>
+  </div>
+</section>
+
+<!-- O NAS -->
+<section id="o-nas">
+  <div class="wrap about">
+    <div class="panel ac">
+      <div class="s-kicker">Poznaj nas</div>
+      <h2 class="s-title">Bistro inne niż wszystkie</h2>
+      <p class="s-note">Przytulne wnętrze, kuchnia domowa i ciepła obsługa — to sprawia, że wracają do nas całe rodziny.</p>
+      <div class="feats">
+        <div class="feat">&#127869; <div><strong>Kuchnia domowa</strong> — świeże dania obiadowe, makarony, ryby i desery każdego dnia.</div></div>
+        <div class="feat">&#127881; <div><strong>Imprezy okolicznościowe</strong> — organizujemy przyjęcia, urodziny i spotkania firmowe.</div></div>
+        <div class="feat">&#127871; <div><strong>Catering</strong> — dowozimy na imprezy poza lokalem.</div></div>
+        <div class="feat">&#128205; <div><strong>Lokalizacja</strong> — ul. Sobieskiego 78, 62-030 Luboń. Łatwy dojazd, bezpłatny parking.</div></div>
+      </div>
+    </div>
+    <div class="panel ap">
+      <img src="hero.jpg" alt="Sala bankietowa Bistro AK-71">
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt">
+  <div class="wrap">
+    <div class="s-top">
+      <div class="s-kicker">Odwiedź nas</div>
+      <h2 class="s-title">Kontakt i godziny</h2>
+    </div>
+    <div class="cg">
+      <div class="panel cc">
+        <h3>Godziny otwarcia</h3>
+        <ul class="hl">
+          <li><span>Poniedziałek</span><span>12:00–18:00</span></li>
+          <li><span>Wtorek</span><span>12:00–18:00</span></li>
+          <li><span>Środa</span><span>12:00–18:00</span></li>
+          <li><span>Czwartek</span><span>12:00–18:00</span></li>
+          <li><span>Piątek</span><span>12:00–18:00</span></li>
+          <li><span>Sobota</span><span>12:00–17:00</span></li>
+          <li><span>Niedziela</span><span>12:00–17:00</span></li>
+        </ul>
+      </div>
+      <div class="panel cc">
+        <h3>Dane kontaktowe</h3>
+        <ul class="cl">
+          <li>&#128205; ul. Sobieskiego 78, 62-030 Luboń</li>
+          <li>&#128222; <a href="tel:+48602262091">602 262 091</a></li>
+          <li>&#128279; <a href="https://www.facebook.com/profile.php?id=100057388662089" target="_blank" rel="noopener">Facebook / Bistro AK-71</a></li>
+        </ul>
+      </div>
+      <div class="panel cc">
+        <h3>Lokalizacja</h3>
+        <iframe class="mf" src="https://www.google.com/maps?q=ul.+Sobieskiego+78,+62-030+Lubo%C5%84&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Bistro AK-71"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div>
+        <div class="fb">
+          <img src="logo.jpg" alt="Logo Bistro AK-71">
+          <div>
+            <div class="ft">Bistro AK-71</div>
+            <div class="fm">Bistro inne niż wszystkie &#128522;<br>Catering &bull; Imprezy okolicznościowe</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>ul. Sobieskiego 78, 62-030 Luboń</li>
+          <li><a href="tel:+48602262091" style="color:var(--gold)">602 262 091</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=100057388662089" target="_blank" rel="noopener" style="color:var(--gold)">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      &copy; 2026 Bistro AK-71. Wszelkie prawa zastrzeżone.<br>
+      Strona przetwarza dane osobowe wyłącznie przez formularz rezerwacji zgodnie z RODO. Administratorem danych jest właściciel Bistro AK-71, ul. Sobieskiego 78, 62-030 Luboń.<br>
+      Kontakt w sprawie danych osobowych: 602 262 091
+    </div>
+  </div>
+</footer>
+
+<script>
+function tab(id,btn){
+  document.querySelectorAll('.tc').forEach(e=>e.classList.remove('on'));
+  document.querySelectorAll('.tb').forEach(e=>e.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  btn.classList.add('on');
+}
+
+</script>
+</body>
+</html>
